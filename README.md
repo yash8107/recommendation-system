@@ -10,6 +10,16 @@ A personalized recommendation system for e-commerce platforms using collaborativ
 - **Web Interface**: Clean, modern UI for testing and demonstration
 - **Scalable Architecture**: Designed to be easily extended with more advanced features
 
+## System Architecture
+
+![System Architecture](images/architecture.svg)
+
+The system consists of four main components:
+1. **Web Interface**: User-friendly interface for testing and demonstration
+2. **Flask API**: RESTful API handling requests and responses
+3. **Recommendation Engine**: Core component implementing collaborative filtering
+4. **User-Item Matrix**: Data structure storing user preferences and interactions
+
 ## Project Structure
 
 ```

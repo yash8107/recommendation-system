@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <rect width="100%" height="100%" fill="#f8f9fa"/>
+    
+    <!-- User Layer -->
+    <rect x="50" y="50" width="150" height="80" rx="10" fill="#007bff" opacity="0.8"/>
+    <text x="125" y="95" text-anchor="middle" fill="white" font-family="Arial" font-size="14">Web Interface</text>
+    
+    <!-- API Layer -->
+    <rect x="325" y="50" width="150" height="80" rx="10" fill="#28a745" opacity="0.8"/>
+    <text x="400" y="95" text-anchor="middle" fill="white" font-family="Arial" font-size="14">Flask API</text>
+    
+    <!-- Recommendation Engine -->
+    <rect x="600" y="50" width="150" height="80" rx="10" fill="#dc3545" opacity="0.8"/>
+    <text x="675" y="95" text-anchor="middle" fill="white" font-family="Arial" font-size="14">Recommendation Engine</text>
+    
+    <!-- Data Layer -->
+    <rect x="325" y="250" width="150" height="80" rx="10" fill="#ffc107" opacity="0.8"/>
+    <text x="400" y="295" text-anchor="middle" fill="white" font-family="Arial" font-size="14">User-Item Matrix</text>
+    
+    <!-- Arrows -->
+    <line x1="200" y1="90" x2="325" y2="90" stroke="#6c757d" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <line x1="475" y1="90" x2="600" y2="90" stroke="#6c757d" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <line x1="400" y1="130" x2="400" y2="250" stroke="#6c757d" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- Arrow Marker -->
+    <defs>
+        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#6c757d"/>
+        </marker>
+    </defs>
+    
+    <!-- Labels -->
+    <text x="262" y="70" text-anchor="middle" fill="#495057" font-family="Arial" font-size="12">HTTP Requests</text>
+    <text x="537" y="70" text-anchor="middle" fill="#495057" font-family="Arial" font-size="12">Get Recommendations</text>
+    <text x="420" y="190" text-anchor="middle" fill="#495057" font-family="Arial" font-size="12">Update Ratings</text>
+</svg>
