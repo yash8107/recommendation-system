@@ -137,7 +137,7 @@ We welcome contributions! Here are some ways you can help:
 
 ## License
 
-This project is released under the [MIT License](LICENSE). Please see the [LICENSE](LICENSE) file for details. If you have any questions or suggestions, please [open an issue](https://github.com/yash8107/recommendation-system/issues).
+This project is released under the [MIT License](LICENSE). Please see the [LICENSE](LICENSE) file for details. If you have any questions or suggestions, please [open an issue](https://github.com/yash8107/recommendation-system/issues). If you want to enhance this code feel free to create a PR. I will review it. It's very helpful to explore together.
 
 ## Contact
 
