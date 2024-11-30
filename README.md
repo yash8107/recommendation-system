@@ -104,6 +104,8 @@ We welcome contributions! Here are some ways you can help:
    - Cold start problem solutions
    - Batch processing for large datasets
 
+![Uploading image.png…]()
+
 4. **UI/UX Improvements**
    - Enhanced product visualization
    - User preference settings
