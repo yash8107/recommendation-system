@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>E-commerce Recommendation System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .container {
+            display: flex;
+            gap: 20px;
+        }
+        .section {
+            flex: 1;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        input, button {
+            padding: 8px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #recommendations {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>E-commerce Recommendation System</h1>
+    
+    <div class="container">
+        <div class="section">
+            <h2>Get Recommendations</h2>
+            <form id="recommendationForm">
+                <input type="number" id="userId" placeholder="Enter User ID" required>
+                <button type="submit">Get Recommendations</button>
+            </form>
+            <div id="recommendations"></div>
+        </div>
+
+        <div class="section">
+            <h2>Record Interaction</h2>
+            <form id="interactionForm">
+                <input type="number" id="interactionUserId" placeholder="User ID" required>
+                <input type="number" id="productId" placeholder="Product ID" required>
+                <input type="number" id="rating" placeholder="Rating (1-5)" min="1" max="5" required>
+                <button type="submit">Record Interaction</button>
+            </form>
+            <div id="interactionResult"></div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('recommendationForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const userId = document.getElementById('userId').value;
+            try {
+                const response = await fetch(`/recommendations/${userId}`);
+                const data = await response.json();
+                const recommendations = document.getElementById('recommendations');
+                recommendations.innerHTML = `<h3>Recommendations for User ${userId}:</h3>
+                    <pre>${JSON.stringify(data, null, 2)}</pre>`;
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        });
+
+        document.getElementById('interactionForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const data = {
+                user_id: parseInt(document.getElementById('interactionUserId').value),
+                product_id: parseInt(document.getElementById('productId').value),
+                rating: parseInt(document.getElementById('rating').value)
+            };
+            try {
+                const response = await fetch('/record_interaction', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                });
+                const result = await response.json();
+                const interactionResult = document.getElementById('interactionResult');
+                interactionResult.innerHTML = `<pre>${JSON.stringify(result, null, 2)}</pre>`;
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        });
+    </script>
+</body>
+</html>
